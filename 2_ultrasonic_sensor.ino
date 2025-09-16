@@ -23,7 +23,7 @@ const int ledPin  = 7;   // LED
 // ===== Timing control =====
 unsigned long lastWave = 0;
 unsigned long lastPat = 0;
-const unsigned long cooldown = 2000;  // 2 sec cooldown to prevent spamming
+
 
 // ====================================================================================
 // Function: getDistance()
@@ -36,7 +36,7 @@ long getDistance() {
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
-  long duration = pulseIn(echoPin, HIGH, 30000); // timeout 30 ms
+  long duration = pulseIn(echoPin, HIGH); 
   return duration * 0.034 / 2; // distance in cm
 }
 
